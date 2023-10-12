@@ -8,6 +8,7 @@ export const SignUp = () => {
 
   const [form, setForm] = useState({
     username: "",
+    email: "",
     password: "",
     confirmPassword: "",
   });
@@ -28,13 +29,14 @@ export const SignUp = () => {
       const formData = {
         username: form.username,
         password: form.password,
+        email: form.email,
       };
 
       const response = await axios.post(
-        "http://localhost:8080/register",
+        "http://localhost:8080/auth/register",
         formData
       );
-      console.log("Response:", response);
+      console.log("Response:", response.data.message);
       navigate("/sign-in");
     } catch (error) {
       console.error("Registration Error:", error);
@@ -60,6 +62,19 @@ export const SignUp = () => {
               value={form.username}
               onChange={handleChange}
               autoComplete="username"
+            />
+          </div>
+          <div className="m-2 w-3/12">
+            <TextField
+              required
+              fullWidth
+              type="email"
+              id="email"
+              label="Email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              autoComplete="email"
             />
           </div>
           <div className="m-2 w-3/12">
