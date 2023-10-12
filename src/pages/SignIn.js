@@ -34,7 +34,12 @@ export const SignIn = () => {
         formData
       );
       console.log("Response:", response.data.message);
-      navigate("/");
+      localStorage.setItem("token", response.data.token);
+      if (window.location.pathname === "/sign-in") {
+        navigate("/");
+      } else {
+        window.location.reload();
+      }
     } catch (error) {
       console.error("Registration Error:", error);
     }
