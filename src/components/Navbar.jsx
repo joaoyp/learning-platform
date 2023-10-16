@@ -5,18 +5,19 @@ export const Navbar = () => {
     <>
       <div className="flex w-8/12 justify-between text-xl">
         <ul className="flex justify-between items-center w-3/12">
-          <li>
-            <a href="/courses">Our Courses</a>
+          <li className=" hover:text-dark-teal">
+            <a href="/courses">Courses</a>
           </li>
-          <li>
+          <li className=" hover:text-dark-teal">
             <a href="/about">About us</a>
           </li>
-          <li>
+          <li className=" hover:text-dark-teal">
             <a href="/contacts">Contacts</a>
           </li>
         </ul>
         <ul className="flex justify-around items-center w-2/12 ml-24">
           <Button
+            href="/sign-in"
             sx={{
               borderColor: "#262626",
               color: "#262626",
@@ -29,6 +30,7 @@ export const Navbar = () => {
             Sign In
           </Button>
           <Button
+            href="/sign-up"
             sx={{
               borderColor: "#262626",
               color: "white",
