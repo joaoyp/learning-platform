@@ -8,9 +8,11 @@ import { SignIn } from "../pages/SignIn";
 import { SignUp } from "../pages/SignUp";
 import { Page404 } from "../pages/Page404";
 import withAuth from "../hoc/withAuth";
+import { Contacts } from "../pages/Contacts";
+import { About } from "../pages/About";
 
 export const RouterPage = () => {
-  const ProtectedCourses = withAuth(Courses);
+  //const ProtectedCourses = withAuth(Courses);
   const ProtectedMyCourses = withAuth(MyCourses);
   const ProtectedCourseDetails = withAuth(CourseDetails);
   const ProtectedUserProfile = withAuth(UserProfile);
@@ -19,13 +21,15 @@ export const RouterPage = () => {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/courses" element={<ProtectedCourses />}></Route>
+        <Route path="/courses" element={<Courses />}></Route>
         <Route
           path="/course-details/:courseId"
           element={<ProtectedCourseDetails />}
         ></Route>
         <Route path="/user-profile" element={<ProtectedUserProfile />}></Route>
         <Route path="/my-courses" element={<ProtectedMyCourses />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/contacts" element={<Contacts />}></Route>
         <Route path="/sign-in" element={<SignIn />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
         <Route path="*" element={<Page404 />}></Route>
