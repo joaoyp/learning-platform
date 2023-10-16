@@ -34,11 +34,11 @@ export const Courses = () => {
   return (
     <div>
       {loading ? (
-        <p>Loading courses...</p>
+        <div className="m-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 h-screen"></div>
       ) : (
         <div className="m-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {courses.map((course) => (
-            <Card sx={{ maxWidth: 600 }}>
+            <Card key={course.id} sx={{ maxWidth: 600 }}>
               <CardContent>
                 <Typography variant="h3" gutterBottom>
                   {course.name}

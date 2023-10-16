@@ -37,6 +37,7 @@ export const SignIn = () => {
       localStorage.setItem("token", response.data.token);
       if (window.location.pathname === "/sign-in") {
         navigate("/");
+        window.location.reload();
       } else {
         window.location.reload();
       }
