@@ -12,9 +12,7 @@ import { Contacts } from "../pages/Contacts";
 import { About } from "../pages/About";
 
 export const RouterPage = () => {
-  //const ProtectedCourses = withAuth(Courses);
   const ProtectedMyCourses = withAuth(MyCourses);
-  const ProtectedCourseDetails = withAuth(CourseDetails);
   const ProtectedUserProfile = withAuth(UserProfile);
 
   return (
@@ -24,7 +22,7 @@ export const RouterPage = () => {
         <Route path="/courses" element={<Courses />}></Route>
         <Route
           path="/course-details/:courseId"
-          element={<ProtectedCourseDetails />}
+          element={<CourseDetails />}
         ></Route>
         <Route path="/user-profile" element={<ProtectedUserProfile />}></Route>
         <Route path="/my-courses" element={<ProtectedMyCourses />}></Route>
