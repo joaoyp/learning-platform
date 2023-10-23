@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CardCollection } from "../components/common/CardCollection";
+import { CourseCardCollection } from "../components/common/CourseCardCollection";
 
 export const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -31,7 +31,7 @@ export const Courses = () => {
       <div className="m-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 h-screen">
         {!loading ? (
           <>
-            <CardCollection courses={courses} />
+            <CourseCardCollection courses={courses} />
           </>
         ) : null}
       </div>
