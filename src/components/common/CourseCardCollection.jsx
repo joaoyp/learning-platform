@@ -4,7 +4,7 @@ export const CourseCardCollection = ({ courses }) => {
   return (
     <>
       {courses.map((course) => (
-        <CourseCard course={course} />
+        <CourseCard key={course.id} course={course} />
       ))}
     </>
   );

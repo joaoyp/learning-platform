@@ -5,10 +5,11 @@ import {
   Typography,
   Button,
 } from "@mui/material";
+import { TertiaryButton } from "./TertiaryButton";
 
 export const CourseCard = ({ course }) => {
   return (
-    <Card key={course.id} sx={{ maxWidth: 600 }}>
+    <Card sx={{ maxWidth: 600 }}>
       <CardContent>
         <Typography variant="h3" gutterBottom>
           {course.name}
@@ -26,9 +27,11 @@ export const CourseCard = ({ course }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" href={`/course-details/${course.id}`}>
-          Details
-        </Button>
+        <TertiaryButton
+          text="learn more"
+          size="small"
+          href={`/course-details/${course.id}`}
+        />
       </CardActions>
     </Card>
   );

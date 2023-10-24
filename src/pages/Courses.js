@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { CourseCardCollection } from "../components/common/CourseCardCollection";
+import { SearchBar } from "../components/common/SearchBar";
 
 export const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -27,14 +28,20 @@ export const Courses = () => {
 
   return (
     <>
-      <h1>Courses</h1>
-      <div className="m-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 h-screen">
-        {!loading ? (
-          <>
-            <CourseCardCollection courses={courses} />
-          </>
-        ) : null}
-      </div>
+      <main className="flex">
+        <aside className="bg-gray-light w-3/12">
+          <div className="flex justify-center mt-4">
+            <SearchBar />
+          </div>
+        </aside>
+        <div className="p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 h-screen w-screen">
+          {!loading ? (
+            <>
+              <CourseCardCollection courses={courses} />
+            </>
+          ) : null}
+        </div>
+      </main>
     </>
   );
 };
