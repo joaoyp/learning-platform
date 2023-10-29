@@ -1,8 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     colors: {
+      ...colors,
       blue: "#1fb6ff",
       purple: "#7e5bef",
       black: "#000000",

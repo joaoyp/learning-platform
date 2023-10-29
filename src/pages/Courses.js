@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CourseCardCollection } from "../components/common/CourseCardCollection";
-import { SearchBar } from "../components/common/SearchBar";
+import { CourseCardCollection } from "../components/courses/CourseCardCollection";
+import { SearchAside } from "../components/courses/SearchAside";
+import { Slideshow } from "../components/common/Slideshow";
 
 export const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = "Courses";
+  }, []);
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -13,8 +18,7 @@ export const Courses = () => {
         const response = await axios.get("http://localhost:8080/courses/all");
         const data = response.data;
 
-        //const shuffledCourses = data.sort(() => 0.5 - Math.random());
-        //const selectedCourses = shuffledCourses.slice(0, 5);
+        data.sort((a, b) => a.name.localeCompare(b.name));
 
         setCourses(data);
         setLoading(false);
@@ -28,12 +32,9 @@ export const Courses = () => {
 
   return (
     <>
+      <Slideshow />
       <main className="flex">
-        <aside className="bg-gray-light w-3/12">
-          <div className="flex justify-center mt-4">
-            <SearchBar />
-          </div>
-        </aside>
+        <SearchAside />
         <div className="p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 h-screen w-screen">
           {!loading ? (
             <>

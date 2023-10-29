@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Slideshow } from "../components/common/Slideshow";
 
 export const CourseDetails = () => {
   const { courseId } = useParams("");
   const [courseDetails, setCourseDetails] = useState({});
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = "Course Details";
+  }, []);
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
@@ -27,6 +32,7 @@ export const CourseDetails = () => {
 
   return (
     <>
+      <Slideshow />
       {loading ? (
         <div></div>
       ) : (

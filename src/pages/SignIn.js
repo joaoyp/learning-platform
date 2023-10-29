@@ -1,10 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link, Typography, TextField, Button } from "@mui/material";
 
 export const SignIn = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
 
   const [form, setForm] = useState({
     username: "",
