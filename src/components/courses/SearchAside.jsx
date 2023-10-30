@@ -11,12 +11,14 @@ import { Typography } from "@mui/material";
 import { Rating } from "@mui/material";
 import { Slider } from "@mui/material";
 import { TextField } from "@mui/material";
+import { FormControl, FormLabel, RadioGroup, Radio } from "@mui/material";
 
 export const SearchAside = () => {
   const searchBarValue = useSelector((state) => state.searchBar.value);
   const filterSearchValue = useSelector((state) => state.filterSearch.value);
   const orderSearchValue = useSelector((state) => state.orderSearch.value);
 
+  //Data
   const [categories, setCategories] = useState([
     "Java",
     "C#",
@@ -26,14 +28,17 @@ export const SearchAside = () => {
     "SQL",
     "HTML",
     "CSS",
-    "Kotlin",
+    "Dart",
   ]);
+  const [duration, setDuration] = useState(["Any", "< 1h", "1h - 4h", "> 4h"]);
 
-  const [duration, setDuration] = useState(["< 1h", "> 1h and < 4h", "> 4h"]);
-
+  //Selected Data
+  //Rating can be obtained
   const [rating, setRating] = useState(3);
+  const [selectedDuration, setSelectedDuration] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  //Price can be obtained with price[0 or 1]
   const [price, setPrice] = useState([0, 500]);
-
   return (
     <>
       <aside className="w-3/12">
@@ -53,6 +58,8 @@ export const SearchAside = () => {
             }}
           />
         </div>
+        {console.log(selectedDuration)}
+        {console.log(categories)}
         <div className="m-7">
           <Typography>Categories:</Typography>
           <div className="m-2 w-full max-h-52 overflow-y-auto">
@@ -124,27 +131,33 @@ export const SearchAside = () => {
             />
           </div>
           <Typography>Duration:</Typography>
-          <div className="m-2 w-full max-h-32 overflow-y-auto">
-            <FormGroup>
-              {duration.map((duration, index) => (
-                <FormControlLabel
-                  key={index}
-                  control={
-                    <Checkbox
-                      sx={{
-                        "&.Mui-checked": {
-                          color: "#008080",
-                        },
-                      }}
-                    />
-                  }
-                  label={duration}
-                />
-              ))}
-            </FormGroup>
+          <div className="m-2 w-full max-h-42 overflow-y-auto">
+            <FormControl>
+              <RadioGroup defaultValue="Any" name="radio-buttons-group">
+                {duration.map((duration, index) => (
+                  <FormControlLabel
+                    value={duration}
+                    onChange={() => {
+                      setSelectedDuration(duration);
+                    }}
+                    control={
+                      <Radio
+                        sx={{
+                          "&.Mui-checked": {
+                            color: "#008080",
+                          },
+                        }}
+                      />
+                    }
+                    label={duration}
+                  />
+                ))}
+              </RadioGroup>
+            </FormControl>
           </div>
           <Typography>Rating:</Typography>
           <Rating
+            size="medium"
             className="m-2"
             value={rating}
             onChange={(event, newValue) => {
