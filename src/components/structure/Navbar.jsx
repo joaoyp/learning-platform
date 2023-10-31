@@ -26,7 +26,6 @@ export const Navbar = () => {
         }
         setLoading(false);
       } catch (error) {
-        console.error("Error validating token:", error);
         setLoading(false);
       }
     };

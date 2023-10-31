@@ -32,10 +32,9 @@ export const Courses = () => {
 
   return (
     <>
-      <Slideshow />
       <main className="flex">
         <SearchAside />
-        <div className="p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 h-screen w-screen">
+        <div className="p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 w-full">
           {!loading ? (
             <>
               <CourseCardCollection courses={courses} />

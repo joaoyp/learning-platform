@@ -1,0 +1,4 @@
+- Search button onClick() - SearchAside.jsx
+- Course Card description - CourseCard.jsx
+- Exceptions always showing in console because of the auth token OPTIONAl
+- validateToken to another file to clean Navbar.js and withAuth.js

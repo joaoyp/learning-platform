@@ -22,7 +22,6 @@ const withAuth = (Component) => {
           setAuthenticated(false);
         }
       } catch (error) {
-        console.error("Validation Error:", error);
         setAuthenticated(false);
       }
     };

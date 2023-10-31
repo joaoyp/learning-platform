@@ -11,7 +11,7 @@ import { Typography } from "@mui/material";
 import { Rating } from "@mui/material";
 import { Slider } from "@mui/material";
 import { TextField } from "@mui/material";
-import { FormControl, FormLabel, RadioGroup, Radio } from "@mui/material";
+import { FormControl, RadioGroup, Radio } from "@mui/material";
 
 export const SearchAside = () => {
   const searchBarValue = useSelector((state) => state.searchBar.value);
@@ -35,13 +35,13 @@ export const SearchAside = () => {
   //Selected Data
   //Rating can be obtained
   const [rating, setRating] = useState(3);
-  const [selectedDuration, setSelectedDuration] = useState("");
+  const [selectedDuration, setSelectedDuration] = useState("Any");
   const [selectedCategories, setSelectedCategories] = useState([]);
   //Price can be obtained with price[0 or 1]
   const [price, setPrice] = useState([0, 500]);
   return (
     <>
-      <aside className="w-3/12">
+      <aside className="w-3/12 top-16 sticky h-screen">
         <div className="m-4 mt-8 flex justify-around">
           <FilterForm></FilterForm>
           <OrderForm></OrderForm>
@@ -52,14 +52,16 @@ export const SearchAside = () => {
             text="Search"
             size="medium"
             onClick={() => {
-              console.log(searchBarValue);
-              console.log(filterSearchValue);
+              console.log(selectedCategories);
+              console.log(selectedDuration);
+              console.log(price[0] + " - " + price[1]);
+              console.log(rating);
               console.log(orderSearchValue);
+              console.log(filterSearchValue);
+              console.log(searchBarValue);
             }}
           />
         </div>
-        {console.log(selectedDuration)}
-        {console.log(categories)}
         <div className="m-7">
           <Typography>Categories:</Typography>
           <div className="m-2 w-full max-h-52 overflow-y-auto">
@@ -67,6 +69,21 @@ export const SearchAside = () => {
               {categories.map((category, index) => (
                 <FormControlLabel
                   key={index}
+                  value={category}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setSelectedCategories((prevSelectedCategories) => [
+                        ...prevSelectedCategories,
+                        category,
+                      ]);
+                    } else {
+                      setSelectedCategories((prevSelectedCategories) =>
+                        prevSelectedCategories.filter(
+                          (selectedCategory) => selectedCategory !== category
+                        )
+                      );
+                    }
+                  }}
                   control={
                     <Checkbox
                       sx={{
@@ -136,6 +153,7 @@ export const SearchAside = () => {
               <RadioGroup defaultValue="Any" name="radio-buttons-group">
                 {duration.map((duration, index) => (
                   <FormControlLabel
+                    key={index}
                     value={duration}
                     onChange={() => {
                       setSelectedDuration(duration);
