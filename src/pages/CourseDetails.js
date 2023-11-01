@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Slideshow } from "../components/common/Slideshow";
 
 export const CourseDetails = () => {
   const { courseId } = useParams("");
@@ -32,7 +31,6 @@ export const CourseDetails = () => {
 
   return (
     <>
-      <Slideshow />
       {loading ? (
         <div></div>
       ) : (

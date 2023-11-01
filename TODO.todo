@@ -2,3 +2,5 @@
 - Course Card description - CourseCard.jsx
 - Exceptions always showing in console because of the auth token OPTIONAl
 - validateToken to another file to clean Navbar.js and withAuth.js
+- Clean with Redux
+- Maybe remove the search button and do everything in real time

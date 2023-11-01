@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Slideshow } from "../components/common/Slideshow";
 
 export const About = () => {
   useEffect(() => {
@@ -8,7 +7,6 @@ export const About = () => {
 
   return (
     <>
-      <Slideshow />
       <h1>About us</h1>
     </>
   );

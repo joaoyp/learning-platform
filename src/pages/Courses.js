@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { CourseCardCollection } from "../components/courses/CourseCardCollection";
 import { SearchAside } from "../components/courses/SearchAside";
-import { Slideshow } from "../components/common/Slideshow";
 
 export const Courses = () => {
   const [courses, setCourses] = useState([]);
