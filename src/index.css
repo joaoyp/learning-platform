@@ -36,16 +36,16 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #e7e7e7;
+  @apply bg-neutral-300;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #262626;
-  border-radius: 5px;
+  @apply bg-teal-700;
+  @apply rounded;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #262626;
+  @apply bg-teal-700;
 }

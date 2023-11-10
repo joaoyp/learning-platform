@@ -2,17 +2,6 @@ import { Card, CardContent, CardActions, Typography } from "@mui/material";
 import { TertiaryButton } from "../../common/TertiaryButton";
 import { formatDuration } from "../../../functions/formatDuration";
 
-//TODO
-const formatDescription = (description) => {
-  if (description.length <= 1) {
-    return "No Description";
-  }
-  if (description.length > 29) {
-    return description.slice(0, 29) + "...";
-  }
-  return description;
-};
-
 export const CourseCard = ({ course }) => {
   return (
     <div
@@ -22,7 +11,7 @@ export const CourseCard = ({ course }) => {
       }}
     >
       <div
-        className="mt-2 h-fit hover:shadow-gray hover:shadow-lg"
+        className="mt-2 h-fit hover:shadow-gray-300 hover:shadow-lg"
         title={course.description}
       >
         <Card>
