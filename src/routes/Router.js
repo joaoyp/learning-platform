@@ -10,6 +10,7 @@ import { Page404 } from "../pages/Page404";
 import withAuth from "../hoc/withAuth";
 import { Contacts } from "../pages/Contacts";
 import { About } from "../pages/About";
+import { Layout } from "../components/structure/layout/Layout";
 
 export const RouterPage = () => {
   const ProtectedMyCourses = withAuth(MyCourses);
@@ -18,19 +19,37 @@ export const RouterPage = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/courses" element={<Courses />}></Route>
+        <Route path="/" element={<Layout children={<LandingPage />} />}></Route>
+        <Route
+          path="/courses"
+          element={<Layout children={<Courses />} />}
+        ></Route>
         <Route
           path="/course-details/:courseId"
-          element={<CourseDetails />}
+          element={<Layout children={<CourseDetails />} />}
         ></Route>
-        <Route path="/user-profile" element={<ProtectedUserProfile />}></Route>
-        <Route path="/my-courses" element={<ProtectedMyCourses />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/contacts" element={<Contacts />}></Route>
-        <Route path="/sign-in" element={<SignIn />}></Route>
-        <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route path="*" element={<Page404 />}></Route>
+        <Route
+          path="/user-profile"
+          element={<Layout children={<ProtectedUserProfile />} />}
+        ></Route>
+        <Route
+          path="/my-courses"
+          element={<Layout children={<ProtectedMyCourses />} />}
+        ></Route>
+        <Route path="/about" element={<Layout children={<About />} />}></Route>
+        <Route
+          path="/contacts"
+          element={<Layout children={<Contacts />} />}
+        ></Route>
+        <Route
+          path="/sign-in"
+          element={<Layout children={<SignIn />} />}
+        ></Route>
+        <Route
+          path="/sign-up"
+          element={<Layout children={<SignUp />} />}
+        ></Route>
+        <Route path="*" element={<Layout children={<Page404 />} />}></Route>
       </Routes>
     </Router>
   );

@@ -7,7 +7,7 @@ export const SignIn = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Login";
+    document.title = "Login | Learning Platform";
   }, []);
 
   const [form, setForm] = useState({

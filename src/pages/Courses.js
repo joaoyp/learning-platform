@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CourseCardCollection } from "../components/courses/CourseCardCollection";
-import { SearchAside } from "../components/courses/SearchAside";
+import { CourseCardCollection } from "../components/structure/courses/CourseCardCollection";
+import { SearchAside } from "../components/structure/courses/SearchAside";
 
 export const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Courses";
+    document.title = "Courses | Learning Platform";
   }, []);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const Courses = () => {
     <>
       <main className="flex">
         <SearchAside />
-        <div className="p-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 w-full">
+        <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
           {!loading ? (
             <>
               <CourseCardCollection courses={courses} />

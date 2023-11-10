@@ -2,12 +2,12 @@ import { useEffect } from "react";
 
 export const About = () => {
   useEffect(() => {
-    document.title = "About Us";
+    document.title = "About Us | Learning Platform";
   }, []);
 
   return (
-    <>
-      <h1>About us</h1>
-    </>
+    <main>
+      <div className="h-real-screen">About Us</div>
+    </main>
   );
 };

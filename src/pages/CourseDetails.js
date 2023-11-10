@@ -8,7 +8,7 @@ export const CourseDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Course Details";
+    document.title = "Course Details | Learning Platform";
   }, []);
 
   useEffect(() => {

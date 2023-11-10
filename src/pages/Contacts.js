@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export const Contacts = () => {
   useEffect(() => {
-    document.title = "Contacts";
+    document.title = "Contacts | Learning Platform";
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PrimaryButton } from "../common/PrimaryButton";
+import { PrimaryButton } from "../../common/PrimaryButton";
 import { SearchBar } from "./SearchBar";
 import { FilterForm } from "./FilterForm";
 import { OrderForm } from "./OrderForm";
@@ -45,8 +45,8 @@ export const SearchAside = () => {
   const [price, setPrice] = useState([0, 500]);
   return (
     <>
-      <aside className="w-3/12 top-16 sticky h-screen overflow-y-auto">
-        <div className="m-4 mt-8 flex justify-around">
+      <aside className="w-3/12 top-24 sticky h-real-screen overflow-y-hidden overflow-x-hidden">
+        <div className="p-2 flex justify-around">
           <FilterForm></FilterForm>
           <OrderForm></OrderForm>
         </div>
@@ -66,13 +66,13 @@ export const SearchAside = () => {
             }}
           />
         </div>
-        <div className="m-6">
-          <div className="flex justify-center">
-            <Typography variant="h6" component="h2">
+        <div className="pl-6 pr-6">
+          <div className="flex justify-start">
+            <Typography fontWeight="bold" fontSize={18}>
               Categories:
             </Typography>
           </div>
-          <div className="w-full max-h-52 overflow-y-auto">
+          <div className="w-full h-52 mt-2 overflow-y-auto">
             <FormGroup>
               {categories.map((category, index) => (
                 <FormControlLabel
@@ -106,13 +106,13 @@ export const SearchAside = () => {
               ))}
             </FormGroup>
           </div>
-          <div className="flex justify-center">
-            <Typography variant="h6" component="h2">
+          <div className="flex justify-start mt-2">
+            <Typography fontWeight="bold" fontSize={18}>
               Price range (€):
             </Typography>
           </div>
           <Slider
-            className="m-2"
+            className="mt-2"
             getAriaLabel={() => "Price Range"}
             value={price}
             onChange={(e) => {
@@ -126,7 +126,7 @@ export const SearchAside = () => {
             min={0}
             max={500}
           />
-          <div className="mb-2 flex justify-center">
+          <div className="mt-2 flex justify-center">
             <div className="w-1/4 mr-4">
               <TextField
                 label="Min:"
@@ -146,7 +146,7 @@ export const SearchAside = () => {
                 }
               />
             </div>
-            <div className="flex items-center">
+            <div className="flex items-start mt-2">
               <Typography>-</Typography>
             </div>
             <div className="w-1/4 ml-4">
@@ -169,12 +169,12 @@ export const SearchAside = () => {
               />
             </div>
           </div>
-          <div className="flex justify-center">
-            <Typography variant="h6" component="h2">
+          <div className="mt-2 pt-2 flex justify-start">
+            <Typography fontWeight="bold" fontSize={18}>
               Duration:
             </Typography>
           </div>
-          <div className="m-2 w-full max-h-42 overflow-y-auto">
+          <div className="ml-2 w-full overflow-y-auto">
             <FormControl>
               <RadioGroup defaultValue="Any" name="radio-buttons-group">
                 {duration.map((duration, index) => (
@@ -199,15 +199,15 @@ export const SearchAside = () => {
               </RadioGroup>
             </FormControl>
           </div>
-          <div className="flex justify-center">
-            <Typography variant="h6" component="h2">
+          <div className="mt-2 flex justify-start">
+            <Typography fontWeight="bold" fontSize={18}>
               Rating:
             </Typography>
           </div>
-          <div className="mb-20">
+          <div>
             <Rating
               size="medium"
-              className="m-2"
+              className="mt-2"
               value={rating}
               onChange={(event, newValue) => {
                 setRating(newValue);

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { PrimaryButton } from "../common/PrimaryButton";
-import { SecondaryButton } from "../common/SecondaryButton";
+import { PrimaryButton } from "../../common/PrimaryButton";
+import { SecondaryButton } from "../../common/SecondaryButton";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   const [authenticated, setAuthenticated] = useState(false);
@@ -42,14 +43,14 @@ export const Navbar = () => {
   return (
     <nav className="flex w-8/12 justify-between text-xl">
       <ul className="flex justify-between items-center w-3/12">
-        <li className="hover:text-dark-teal">
-          <a href="/courses">Courses</a>
+        <li className="hover:text-teal-700">
+          <NavLink to="/courses">Courses</NavLink>
         </li>
-        <li className="hover:text-dark-teal">
-          <a href="/about">About us</a>
+        <li className="hover:text-teal-700">
+          <NavLink to="/about">About Us</NavLink>
         </li>
-        <li className="hover:text-dark-teal">
-          <a href="/contacts">Contacts</a>
+        <li className="hover:text-teal-700">
+          <NavLink to="/contacts">Contacts</NavLink>
         </li>
       </ul>
       <ul className="flex justify-around items-center w-2/12">

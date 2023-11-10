@@ -1,6 +1,6 @@
 import { FormControl, Select, MenuItem, InputLabel } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { setFilterSearch } from "../../redux/slices/filterSlice";
+import { setFilterSearch } from "../../../redux/slices/filterSlice";
 
 export const FilterForm = () => {
   const dispatch = useDispatch();

@@ -26,12 +26,12 @@ const withAuth = (Component) => {
       }
     };
 
-    if (authenticated === true) {
+    if (authenticated) {
       return <Component {...props} />;
     } else if (authenticated === false) {
       return <SignIn {...props} />;
     } else {
-      return <p>Loading...</p>;
+      return null; //TODO: Loading Page
     }
   };
 };

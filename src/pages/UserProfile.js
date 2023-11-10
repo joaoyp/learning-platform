@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export const UserProfile = () => {
   useEffect(() => {
-    document.title = "User Profile";
+    document.title = "Profile | Learning Platform";
   }, []);
 
   return (

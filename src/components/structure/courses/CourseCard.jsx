@@ -1,6 +1,6 @@
 import { Card, CardContent, CardActions, Typography } from "@mui/material";
-import { TertiaryButton } from "../common/TertiaryButton";
-import { formatDuration } from "../../functions/formatDuration";
+import { TertiaryButton } from "../../common/TertiaryButton";
+import { formatDuration } from "../../../functions/formatDuration";
 
 //TODO
 const formatDescription = (description) => {
@@ -15,7 +15,12 @@ const formatDescription = (description) => {
 
 export const CourseCard = ({ course }) => {
   return (
-    <a href={`/course-details/${course.id}`}>
+    <div
+      className="cursor-pointer"
+      onClick={() => {
+        window.location.href = `/course-details/${course.id}`;
+      }}
+    >
       <div
         className="mt-2 h-fit hover:shadow-gray hover:shadow-lg"
         title={course.description}
@@ -25,10 +30,10 @@ export const CourseCard = ({ course }) => {
             <Typography variant="h5" gutterBottom>
               {course.name}
             </Typography>
-            <Typography className="" component="div">
-              {formatDescription(course.description)}
+            <Typography className="h-20 overflow-hidden" component="div">
+              {course.description}
             </Typography>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            <Typography sx={{ mb: 1.5, mt: 2 }} color="text.secondary">
               {course.instructor}
             </Typography>
             <Typography variant="body1">
@@ -38,7 +43,7 @@ export const CourseCard = ({ course }) => {
               {course.price === 0 ? "FREE" : course.price + "€"}
             </Typography>
           </CardContent>
-          <CardActions className="h-full bg-dark-teal justify-center">
+          <CardActions className="h-full bg-teal-700 justify-center">
             <TertiaryButton
               text="learn more"
               size="medium"
@@ -47,6 +52,6 @@ export const CourseCard = ({ course }) => {
           </CardActions>
         </Card>
       </div>
-    </a>
+    </div>
   );
 };

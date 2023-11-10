@@ -2,7 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* width */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.h-real-screen {
+  height: calc(100vh - 5rem);
+}
+
+.min-h-real-screen {
+  min-height: calc(100vh - 5rem);
+}
+
+.active {
+  @apply text-teal-700;
+  @apply underline;
+  @apply underline-offset-8;
+}
+
+/* Width */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -14,11 +41,11 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #008080;
+  background: #262626;
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #006161;
+  background: #262626;
 }
