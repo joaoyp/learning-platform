@@ -8,6 +8,14 @@ module.exports = {
       serif: ["Merriweather", "serif"],
     },
     extend: {
+      colors: {
+        teal: {
+          950: "#008080",
+        },
+      },
+      fontFamily: {
+        bitter: ['"Bitter', "serif"],
+      },
       backgroundImage: {
         hero: "url('/src/assets/images/hero.jpg')",
       },

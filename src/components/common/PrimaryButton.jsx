@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
+import { Lettering } from "./Lettering";
 
-export const PrimaryButton = ({ href, size, text, onClick }) => {
+export const PrimaryButton = ({ href, size, text, onClick, fontSize }) => {
   return (
     <>
       <Button
@@ -18,7 +19,7 @@ export const PrimaryButton = ({ href, size, text, onClick }) => {
           },
         }}
       >
-        {text}
+        <Lettering text={text} fontSize={fontSize} fontFamily={"bitter"} />
       </Button>
     </>
   );

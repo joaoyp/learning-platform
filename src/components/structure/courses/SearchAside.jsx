@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PrimaryButton } from "../../common/PrimaryButton";
-import { SearchBar } from "./SearchBar";
-import { FilterForm } from "./FilterForm";
-import { OrderForm } from "./OrderForm";
+import { SearchBar } from "./Filters/SearchBar";
+import { FilterForm } from "./Filters/FilterForm";
+import { OrderForm } from "./Filters/OrderForm";
 import { useSelector } from "react-redux";
 import {
   FormGroup,
@@ -210,7 +210,7 @@ export const SearchAside = () => {
               className="mt-2"
               value={rating}
               onChange={(event, newValue) => {
-                setRating(newValue);
+                newValue ? setRating(newValue) : setRating(0);
               }}
             />
           </div>

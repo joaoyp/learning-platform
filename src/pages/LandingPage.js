@@ -3,6 +3,7 @@ import { Container, Typography } from "@mui/material";
 import { PrimaryButton } from "../components/common/PrimaryButton";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Lettering } from "../components/common/Lettering";
 
 export const LandingPage = () => {
   useEffect(() => {
@@ -19,16 +20,23 @@ export const LandingPage = () => {
               maxWidth="sm"
               className="text-center relative text-white flex items-center"
             >
-              <Typography variant="h2" component="h1" gutterBottom>
-                Welcome to our{" "}
-                <span className="text-teal-500">Learning Platform</span>
-              </Typography>
-              <Typography variant="h5" gutterBottom>
-                Unlock your potential with our wide range of courses.
-              </Typography>
+              <Lettering text="Welcome to our" fontSize={55} />
+              <span className="text-teal-500">
+                <Lettering text="Learning Platform" fontSize={60} />
+              </span>
+              <div className="mt-4">
+                <Lettering
+                  text="Unlock your potential with our wide range of courses."
+                  fontSize={28}
+                />
+              </div>
               <div className=" mt-8">
                 <Link to="/courses">
-                  <PrimaryButton text="Get Started" size="medium" />
+                  <PrimaryButton
+                    text="Get Started"
+                    size="medium"
+                    fontSize={16}
+                  />
                 </Link>
               </div>
             </Container>

@@ -32,7 +32,7 @@ export const CourseCard = ({ course }) => {
               {course.price === 0 ? "FREE" : course.price + "€"}
             </Typography>
           </CardContent>
-          <CardActions className="h-full bg-teal-700 justify-center">
+          <CardActions className="h-full bg-teal-950 justify-center">
             <TertiaryButton
               text="learn more"
               size="medium"

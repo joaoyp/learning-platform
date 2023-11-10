@@ -43,13 +43,33 @@ export const Actions = () => {
     <ul className="flex justify-between items-center gap-4">
       {loading ? null : authenticated ? (
         <>
-          <PrimaryButton text="Profile" href="/user-profile" size="medium" />
-          <SecondaryButton onClick={handleLogout} text="Logout" size="medium" />
+          <PrimaryButton
+            text="Profile"
+            fontSize={16}
+            href="/user-profile"
+            size="medium"
+          />
+          <SecondaryButton
+            onClick={handleLogout}
+            text="Logout"
+            fontSize={16}
+            size="medium"
+          />
         </>
       ) : (
         <>
-          <SecondaryButton text="Login" href="/sign-in" size="medium" />
-          <PrimaryButton text="Register" href="/sign-up" size="medium" />
+          <SecondaryButton
+            text="Login"
+            fontSize={16}
+            href="/sign-in"
+            size="medium"
+          />
+          <PrimaryButton
+            text="Register"
+            fontSize={16}
+            href="/sign-up"
+            size="medium"
+          />
         </>
       )}
     </ul>

@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import SchoolIcon from "@mui/icons-material/School";
+import { Typography } from "@mui/material";
+import { Lettering } from "../../common/Lettering";
 
 export const Logo = () => {
   return (
     <Link to="/">
       <div className="flex justify-between items-center cursor-pointer">
-        <SchoolIcon fontSize="large" sx={{ color: "teal" }} />
-        <p className="ml-2 w-full">Online Learning Platform</p>
+        <SchoolIcon sx={{ color: "teal", fontSize: "50px" }} />
+        <div className="ml-2 max-md:hidden">
+          <Lettering
+            text="Online Learning Platform"
+            fontSize={24}
+            fontFamily={"bitter"}
+          />
+        </div>
       </div>
     </Link>
   );

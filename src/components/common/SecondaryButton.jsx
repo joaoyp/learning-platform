@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
+import { Lettering } from "./Lettering";
 
-export const SecondaryButton = ({ href, size, text, onClick }) => {
+export const SecondaryButton = ({ href, size, text, onClick, fontSize }) => {
   return (
     <>
       <Button
@@ -19,7 +20,7 @@ export const SecondaryButton = ({ href, size, text, onClick }) => {
           },
         }}
       >
-        {text}
+        <Lettering text={text} fontSize={fontSize} fontFamily={"bitter"} />
       </Button>
     </>
   );
