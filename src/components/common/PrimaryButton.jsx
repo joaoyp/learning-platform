@@ -1,11 +1,19 @@
 import { Button } from "@mui/material";
 import { Lettering } from "./Lettering";
 
-export const PrimaryButton = ({ href, size, text, onClick, fontSize }) => {
+export const PrimaryButton = ({
+  href,
+  size,
+  text,
+  onClick,
+  fontSize,
+  type,
+}) => {
   return (
     <>
       <Button
         onClick={onClick}
+        type={type}
         variant="contained"
         href={href}
         size={size}

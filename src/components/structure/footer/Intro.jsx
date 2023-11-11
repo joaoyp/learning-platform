@@ -3,7 +3,7 @@ import { Lettering } from "../../common/Lettering";
 
 export const Intro = () => {
   return (
-    <div className="w-full flex flex-col">
+    <div className="ml-8 w-full flex flex-col">
       <div className="flex">
         <SchoolIcon sx={{ color: "teal", fontSize: "90px" }} />
         <div className="flex items-center ml-6">

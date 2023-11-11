@@ -18,6 +18,7 @@ module.exports = {
       },
       backgroundImage: {
         hero: "url('/src/assets/images/hero.jpg')",
+        contactImage: "url('/src/assets/images/sintra.jpg')",
       },
       spacing: {
         "8xl": "96rem",
