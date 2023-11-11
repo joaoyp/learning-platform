@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import SchoolIcon from "@mui/icons-material/School";
-import { Typography } from "@mui/material";
 import { Lettering } from "../../common/Lettering";
 
 export const Logo = () => {

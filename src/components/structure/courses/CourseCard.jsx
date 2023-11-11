@@ -11,7 +11,7 @@ export const CourseCard = ({ course }) => {
       }}
     >
       <div
-        className="mt-2 h-fit hover:shadow-gray-300 hover:shadow-lg"
+        className="mt-2 h-fit hover:shadow-neutral-500 hover:shadow-lg"
         title={course.description}
       >
         <Card>

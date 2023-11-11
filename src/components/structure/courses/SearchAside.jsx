@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PrimaryButton } from "../../common/PrimaryButton";
 import { SearchBar } from "./Filters/SearchBar";
 import { FilterForm } from "./Filters/FilterForm";

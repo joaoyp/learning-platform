@@ -1,6 +1,4 @@
-import SchoolIcon from "@mui/icons-material/School";
 import { Navbar } from "../header/Navbar";
-import { Link } from "react-router-dom";
 import { Logo } from "../header/Logo";
 import { Actions } from "../header/Actions";
 
