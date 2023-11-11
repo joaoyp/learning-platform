@@ -12,13 +12,13 @@ export const Contacts = () => {
   return (
     <>
       <div className="flex justify-center p-10">
-        <div className="bg-contactImage w-full bg-cover"></div>
+        <div className="bg-contactImage bg-top w-full h-[80vh] bg-cover"></div>
         <div className="w-full relative">
-          <div className="flex justify-center absolute w-full mt-20">
-            <Lettering text={"Contact Us"} fontSize={30} />
+          <div className="flex justify-center absolute w-full mt-20 max-lg:mt-0">
+            <Lettering text={"Contact Us"} fontSize={45} />
           </div>
           <form onSubmit={""}>
-            <div className="flex flex-col gap-4 p-6 h-real-screen items-center justify-center">
+            <div className="flex flex-col gap-4 h-real-screen items-center justify-center">
               <div className="flex w-9/12 gap-4 justify-between">
                 <div className="w-full">
                   <TextField
