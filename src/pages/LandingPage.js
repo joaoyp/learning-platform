@@ -4,6 +4,7 @@ import { PrimaryButton } from "../components/common/PrimaryButton";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Lettering } from "../components/common/Lettering";
+import { IntroText } from "../components/structure/landing/IntroText";
 
 export const LandingPage = () => {
   useEffect(() => {
@@ -42,8 +43,7 @@ export const LandingPage = () => {
             </Container>
           </div>
         </div>
-        <div id="teal" className="h-real-screen bg-teal-700"></div>
-        <div id="white" className="h-real-screen bg-white"></div>
+        <IntroText />
       </main>
     </>
   );

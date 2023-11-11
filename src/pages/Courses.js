@@ -33,7 +33,7 @@ export const Courses = () => {
     <>
       <main className="flex">
         <SearchAside />
-        <div className="mt-4 mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-full">
+        <div className="mt-4 mb-4 mr-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-full">
           {!loading ? (
             <>
               <CourseCardCollection courses={courses} />
