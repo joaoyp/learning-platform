@@ -17,7 +17,7 @@ export const Contacts = () => {
           <div className="flex justify-center absolute w-full mt-20 max-lg:mt-0">
             <Lettering text={"Contact Us"} fontSize={45} />
           </div>
-          <form onSubmit={""}>
+          <form onSubmit={() => {}}>
             <div className="flex flex-col gap-4 h-real-screen items-center justify-center">
               <div className="flex w-9/12 gap-4 justify-between">
                 <div className="w-full">
@@ -29,7 +29,7 @@ export const Contacts = () => {
                     label="First Name"
                     name="firstName"
                     value={""}
-                    onChange={""}
+                    onChange={() => {}}
                   />
                 </div>
                 <div className="w-full">
@@ -41,7 +41,7 @@ export const Contacts = () => {
                     label="Last Name"
                     name="lastName"
                     value={""}
-                    onChange={""}
+                    onChange={() => {}}
                   />
                 </div>
               </div>
@@ -55,7 +55,7 @@ export const Contacts = () => {
                   label="Email"
                   name="email"
                   value={""}
-                  onChange={""}
+                  onChange={() => {}}
                 />
               </div>
               <div className="w-9/12">
@@ -68,7 +68,7 @@ export const Contacts = () => {
                   label="Message"
                   name="message"
                   value={""}
-                  onChange={""}
+                  onChange={() => {}}
                 />
               </div>
               <div className="mt-2">
