@@ -46,7 +46,7 @@ export const SearchAside = () => {
   return (
     <>
       <aside className="w-3/12 top-24 sticky h-real-screen overflow-y-hidden overflow-x-hidden">
-        <div className="p-2 flex justify-around">
+        <div className="p-2 flex justify-evenly">
           <FilterForm></FilterForm>
           <OrderForm></OrderForm>
         </div>

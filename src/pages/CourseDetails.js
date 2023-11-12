@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -6,6 +6,7 @@ export const CourseDetails = () => {
   const { courseId } = useParams("");
   const [courseDetails, setCourseDetails] = useState({});
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Course Details | Learning Platform";
@@ -22,7 +23,8 @@ export const CourseDetails = () => {
         setCourseDetails(data);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching course's details:", error);
+        //console.error("Error fetching course's details:", error);
+        navigate("/404");
       }
     };
 

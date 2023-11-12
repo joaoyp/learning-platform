@@ -28,6 +28,13 @@ export const Contacts = () => {
                     id="firstName"
                     label="First Name"
                     name="firstName"
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "&.Mui-focused fieldset": {
+                          borderColor: "#008080",
+                        },
+                      },
+                    }}
                     value={""}
                     onChange={() => {}}
                   />
@@ -38,6 +45,13 @@ export const Contacts = () => {
                     fullWidth
                     type="text"
                     id="lastName"
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        "&.Mui-focused fieldset": {
+                          borderColor: "#008080",
+                        },
+                      },
+                    }}
                     label="Last Name"
                     name="lastName"
                     value={""}
@@ -52,6 +66,13 @@ export const Contacts = () => {
                   fullWidth
                   type="email"
                   id="email"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#008080",
+                      },
+                    },
+                  }}
                   label="Email"
                   name="email"
                   value={""}
@@ -65,6 +86,13 @@ export const Contacts = () => {
                   fullWidth
                   type="text"
                   id="message"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#008080",
+                      },
+                    },
+                  }}
                   label="Message"
                   name="message"
                   value={""}
