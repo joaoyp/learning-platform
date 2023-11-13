@@ -7,7 +7,7 @@ export const About = () => {
 
   return (
     <main>
-      <div className="h-real-screen">About Us</div>
+      <section className="h-real-screen">About us</section>
     </main>
   );
 };

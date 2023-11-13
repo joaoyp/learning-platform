@@ -108,17 +108,15 @@ export const Courses = () => {
   };
 
   return (
-    <>
-      <main className="flex">
-        <SearchAside onSearch={handleSearch} />
-        <div className="h-fit mt-4 mb-8 mr-8 ml-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-full">
-          {!loading ? (
-            <>
-              <CourseCardCollection courses={filteredCourses} />
-            </>
-          ) : null}
-        </div>
-      </main>
-    </>
+    <main className="flex">
+      <SearchAside onSearch={handleSearch} />
+      <div className="h-fit mt-4 mb-8 mr-8 ml-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-full">
+        {!loading ? (
+          <>
+            <CourseCardCollection courses={filteredCourses} />
+          </>
+        ) : null}
+      </div>
+    </main>
   );
 };

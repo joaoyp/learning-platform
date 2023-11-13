@@ -34,7 +34,7 @@ export const CourseDetails = () => {
   }, [courseId]);
 
   return (
-    <div className="container mx-auto mt-8">
+    <main className="container mx-auto mt-8">
       {loading ? null : (
         <div>
           <img
@@ -72,6 +72,6 @@ export const CourseDetails = () => {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 };

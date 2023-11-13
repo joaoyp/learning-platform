@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { Lettering } from "../components/common/Lettering";
 import { IntroText } from "../components/structure/landing/IntroText";
 import { Hero } from "../components/structure/landing/Hero";
+import { How } from "../components/structure/landing/How";
+import { Benefits } from "../components/structure/landing/Benefits";
+import { FeaturedCourses } from "../components/structure/landing/FeaturedCourses";
 
 export const LandingPage = () => {
   useEffect(() => {
@@ -13,11 +16,9 @@ export const LandingPage = () => {
   }, []);
 
   return (
-    <>
-      <main>
-        <Hero />
-        <IntroText />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <How />
+    </main>
   );
 };
