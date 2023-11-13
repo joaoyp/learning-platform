@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Lettering } from "../components/common/Lettering";
 
 export const CourseDetails = () => {
   const { courseId } = useParams("");
@@ -37,16 +38,9 @@ export const CourseDetails = () => {
         <div></div>
       ) : (
         <>
-          <h1>Course Details</h1>
-          <h2>Name: {courseDetails.name}</h2>
-          <h2>Description: {courseDetails.description}</h2>
-          <h2>Instructor: {courseDetails.instructor}</h2>
-          <h2>Duration: {courseDetails.duration}</h2>
-          <h2>
-            Price:{" "}
-            {courseDetails.price === 0 ? "FREE" : courseDetails.price + "€"}
-          </h2>
-          <h2>Created At: {courseDetails.created_at}</h2>
+          {Object.entries(courseDetails).map(([key, value]) => (
+            <Lettering text={key + " : " + value} />
+          ))}
         </>
       )}
     </>

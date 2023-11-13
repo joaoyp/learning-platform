@@ -1,6 +1,13 @@
 import { Typography } from "@mui/material";
 
-export const Lettering = ({ text, fontSize, variant, component, color }) => {
+export const Lettering = ({
+  text,
+  fontSize,
+  variant,
+  component,
+  color,
+  fontWeight,
+}) => {
   return (
     <Typography
       variant={variant}
@@ -8,6 +15,7 @@ export const Lettering = ({ text, fontSize, variant, component, color }) => {
       fontFamily={"bitter"}
       fontSize={fontSize}
       color={color}
+      fontWeight={fontWeight}
     >
       {text}
     </Typography>
