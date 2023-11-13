@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { PrimaryButton } from "../../common/PrimaryButton";
 import { SearchBar } from "./Filters/SearchBar";
 import { FilterForm } from "./Filters/FilterForm";
@@ -9,7 +8,7 @@ import { Price } from "./Filters/Price";
 import { Duration } from "./Filters/Duration";
 import { CourseRating } from "./Filters/Rating";
 
-export const SearchAside = () => {
+export const SearchAside = ({ onSearch }) => {
   const searchBarValue = useSelector((state) => state.searchBar.value);
   const filterSearchValue = useSelector((state) => state.filterSearch.value);
   const orderSearchValue = useSelector((state) => state.orderSearch.value);
@@ -21,6 +20,20 @@ export const SearchAside = () => {
   );
   const ratingSearchValue = useSelector((state) => state.ratingSearch.value);
   const priceSearchValue = useSelector((state) => state.priceSearch.value);
+
+  const handleSearch = () => {
+    onSearch({
+      categories: categoriesSearchValue,
+      duration: durationSearchValue,
+      rating: ratingSearchValue,
+      priceMin: priceSearchValue[0],
+      priceMax: priceSearchValue[1],
+      searchBarValue,
+      filterSearchValue,
+      orderSearchValue,
+    });
+  };
+
   return (
     <>
       <aside className="w-3/12 top-24 sticky h-real-screen overflow-y-hidden overflow-x-hidden">
@@ -30,19 +43,7 @@ export const SearchAside = () => {
         </div>
         <div className="m-4 flex justify-around">
           <SearchBar />
-          <PrimaryButton
-            text="Search"
-            size="medium"
-            onClick={() => {
-              console.log(categoriesSearchValue);
-              console.log(orderSearchValue);
-              console.log(filterSearchValue);
-              console.log(searchBarValue);
-              console.log(durationSearchValue);
-              console.log(ratingSearchValue);
-              console.log(priceSearchValue[0] + " - " + priceSearchValue[1]);
-            }}
-          />
+          <PrimaryButton text="Search" size="medium" onClick={handleSearch} />
         </div>
         <div className="pl-6 pr-6">
           <Categories />

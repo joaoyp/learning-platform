@@ -12,12 +12,12 @@ export const FilterForm = () => {
         <Select
           displayEmpty
           label="Filter By:"
-          defaultValue="Most Recent"
+          defaultValue="Creation"
           onChange={(event) => {
             dispatch(setFilterSearch(event.target.value));
           }}
         >
-          <MenuItem value="Most Recent">Most Recent</MenuItem>
+          <MenuItem value="Creation">Creation</MenuItem>
           <MenuItem value="Alphabetically">Alphabetically</MenuItem>
           <MenuItem value="Price">Price</MenuItem>
         </Select>

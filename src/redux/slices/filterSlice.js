@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const filterSlice = createSlice({
   name: "filterSearch",
   initialState: {
-    value: "Most Recent",
+    value: "Creation",
   },
   reducers: {
     setFilterSearch: (state, action) => {
