@@ -9,9 +9,9 @@ export const TertiaryButton = ({ href, size, text, onClick }) => {
         href={href}
         size={size}
         sx={{
-          color: "#ffffff", //008080
+          color: "#008080",
           "&:hover": {
-            color: "#ebebeb",
+            color: "#009191",
           },
         }}
       >

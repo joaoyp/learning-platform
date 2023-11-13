@@ -2,6 +2,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link, Typography, TextField, Button } from "@mui/material";
+import { TertiaryButton } from "../components/common/TertiaryButton";
+import { PrimaryButton } from "../components/common/PrimaryButton";
+import { Lettering } from "../components/common/Lettering";
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -50,11 +53,10 @@ export const SignUp = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-col h-screen items-center justify-center">
-          <Typography className="" component="h1" variant="h5">
-            Sign up
-          </Typography>
-
+        <div className="flex flex-col h-real-screen items-center justify-center">
+          <div className="text-teal-950">
+            <Lettering text={"Sign Up"} fontSize={30} />
+          </div>
           <div className="m-2 w-3/12">
             <TextField
               required
@@ -66,6 +68,13 @@ export const SignUp = () => {
               value={form.username}
               onChange={handleChange}
               autoComplete="username"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#008080",
+                  },
+                },
+              }}
             />
           </div>
           <div className="m-2 w-3/12">
@@ -79,6 +88,13 @@ export const SignUp = () => {
               value={form.email}
               onChange={handleChange}
               autoComplete="email"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#008080",
+                  },
+                },
+              }}
             />
           </div>
           <div className="m-2 w-3/12">
@@ -92,6 +108,13 @@ export const SignUp = () => {
               value={form.password}
               onChange={handleChange}
               autoComplete="password"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#008080",
+                  },
+                },
+              }}
             />
           </div>
           <div className="m-2 w-3/12">
@@ -105,16 +128,23 @@ export const SignUp = () => {
               value={form.confirmPassword}
               onChange={handleChange}
               autoComplete="confirmPassword"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#008080",
+                  },
+                },
+              }}
             />
           </div>
-          <div className="w-1/12 mt-2">
-            <Button type="submit" fullWidth variant="contained">
-              Sign Up
-            </Button>
+          <div className="mt-4">
+            <PrimaryButton size={"large"} text={"Sign Up"} type={"submit"} />
           </div>
 
           <div className="mt-5">
-            <Link href="/sign-in">Already have an account? Sign in</Link>
+            <Link to="/sign-in">
+              <TertiaryButton text={"Already have an account? Sign in"} />
+            </Link>
           </div>
         </div>
       </form>

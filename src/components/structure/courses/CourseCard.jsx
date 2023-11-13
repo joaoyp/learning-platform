@@ -1,5 +1,4 @@
 import { Card, CardContent, CardActions, Typography } from "@mui/material";
-import { TertiaryButton } from "../../common/TertiaryButton";
 import { formatDuration } from "../../../functions/formatDuration";
 import GradeIcon from "@mui/icons-material/Grade";
 import { Lettering } from "../../common/Lettering";
