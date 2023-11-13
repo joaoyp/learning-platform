@@ -206,6 +206,7 @@ export const SearchAside = () => {
           </div>
           <div>
             <Rating
+              precision={0.5}
               size="medium"
               className="mt-2"
               value={rating}
