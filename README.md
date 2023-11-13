@@ -24,7 +24,7 @@ Install dependencies:
   npm install
 ```
 
-Run the frotend server:
+Run the frontend server:
 ```bash
   npm start
 ```
