@@ -24,7 +24,10 @@ Install dependencies:
 ```
 
 Run the frontend server:
+<<<<<<< HEAD
 
+=======
+>>>>>>> e67a9c1d78aa162f100712e624351184b092a4ce
 ```bash
   npm start
 ```
